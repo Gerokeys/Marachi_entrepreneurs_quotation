@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotation - Marachi Entrepreneurs Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Poppins:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div id="quotationContent" class="quotation-container">
+
+      <!-- Header -->
+      <header class="quotation-header">
+        <h1 class="company-name">MARACHI<br />ENTREPRENEURS LTD</h1>
+        <div class="logo">
+          <img src="./assets/logo.jpeg" alt="Marachi Entrepreneurs Ltd logo" />
+          <p>Welding Your Future</p>
+        </div>
+      </header>
+
+      <p class="dealers">
+        Specialist dealers of all types of steel structures, Metal Fabricated Kiosks, Gates,
+        Grills, Doors, Windows, Water Tanks, Water Towers, Wheelbarrows &amp; all general metal
+        engineering fabricated works &amp; Contractors.
+      </p>
+
+      <h2 class="word">QUOTATION</h2>
+
+      <!-- Meta box -->
+      <div class="doc-meta-box">
+        <div class="doc-meta-col">
+          <div class="meta-col-label">Quotation Number:</div>
+          <input type="text" id="quotationNumber" class="meta-input" placeholder="e.g. QN-001" />
+        </div>
+        <div class="doc-meta-col">
+          <div class="meta-col-label">Quotation Date:</div>
+          <input type="text" id="currentDate" class="meta-input" />
+        </div>
+        <div class="doc-meta-col doc-meta-company">
+          <div class="meta-col-label">Company Details:</div>
+          <p>Along Ruiru-Kamiti Road,<br />Opposite the affordable housing buildings</p>
+          <p>Contact: 0721672387</p>
+          <p>Website: <a href="#">marachifabrications.com</a></p>
+        </div>
+      </div>
+
+      <!-- Project details -->
+      <div class="project-details">
+        <h2 class="section-title">Project Details</h2>
+        <div class="meta-row">
+          <span class="meta-label">Client:</span>
+          <input type="text" id="clientName" class="meta-input" value="Food for Education" />
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Project:</span>
+          <input type="text" id="projectDesc" class="meta-input"
+            value="Supply, fabrication and fixing of mud scrapers at the cooking facilities (kitchens)" />
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Reference:</span>
+          <input type="text" id="drawingRef" class="meta-input"
+            value="Mud Scraper Details drawing and its architectural notes" />
+        </div>
+      </div>
+
+      <!-- 1. Unit rate -->
+      <section class="block">
+        <h2 class="section-title">1. Unit Rate</h2>
+        <table class="q-table">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th style="width:70px;">Unit</th>
+              <th class="num" style="width:190px;">Rate (Ksh)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Mud scraper &mdash; supplied, fabricated and fixed, one per kitchen, strictly in
+                accordance with the Mud Scraper Details drawing and its architectural notes.
+              </td>
+              <td>No.</td>
+              <td class="num">
+                <input type="number" id="unitRate" class="cell-input num" placeholder="Enter unit rate"
+                  min="0" step="0.01" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 2. Cost per region -->
+      <section class="block">
+        <h2 class="section-title">2. Total Cost per Region</h2>
+        <table class="q-table" id="costTable">
+          <thead>
+            <tr>
+              <th style="width:36px;">#</th>
+              <th>Region</th>
+              <th class="num" style="width:90px;">Kitchens</th>
+              <th class="num" style="width:110px;">Mud Scrapers</th>
+              <th class="num" style="width:130px;">Unit Rate (Ksh)</th>
+              <th class="num" style="width:150px;">Total (Ksh)</th>
+            </tr>
+          </thead>
+          <tbody id="costRows"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="2">TOTAL</td>
+              <td class="num" id="totalKitchens"></td>
+              <td class="num" id="totalScrapers"></td>
+              <td></td>
+              <td class="num" id="costSubtotal">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div class="totals-wrap">
+          <table class="totals-table">
+            <tr>
+              <td>Subtotal:</td>
+              <td class="num">Ksh <span id="subtotal">0.00</span></td>
+            </tr>
+            <tr>
+              <td>
+                VAT @ <input type="number" id="vatRate" class="cell-input vat-input" value="0" min="0" max="100" step="0.5" />%:
+              </td>
+              <td class="num">Ksh <span id="vatAmount">0.00</span></td>
+            </tr>
+            <tr class="grand">
+              <td><strong>TOTAL:</strong></td>
+              <td class="num"><strong>Ksh <span id="grandTotal">0.00</span></strong></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. Timeline -->
+      <section class="block">
+        <h2 class="section-title">3. Proposed Timeline per Region</h2>
+        <table class="q-table" id="timelineTable">
+          <thead>
+            <tr>
+              <th style="width:36px;">#</th>
+              <th>Region</th>
+              <th class="num" style="width:110px;">Mud Scrapers</th>
+              <th style="width:200px;">Fabrication</th>
+              <th style="width:200px;">Installation</th>
+            </tr>
+          </thead>
+          <tbody id="timelineRows"></tbody>
+        </table>
+        <div class="meta-row timeline-note">
+          <span class="meta-label">Overall completion:</span>
+          <input type="text" id="overallTimeline" class="meta-input"
+            placeholder="e.g. 8 weeks from receipt of order" />
+        </div>
+      </section>
+
+      <!-- Notes -->
+      <section class="block avoid-break">
+        <h2 class="section-title">Notes</h2>
+        <ol class="notes">
+          <li>All works will be carried out strictly in accordance with the drawing and its architectural notes.</li>
+          <li>Dimensions will not be scaled from the drawing. Site conditions at each kitchen will be
+            verified before fabrication and any discrepancies brought to your attention.</li>
+          <li>The unit rate covers supply, fabrication and fixing of one mud scraper at each kitchen.</li>
+        </ol>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer avoid-break">
+        <div class="terms">
+          <h3>Terms &amp; Conditions</h3>
+          <p>This Quotation is valid for 30 days from the above mentioned date.</p>
+          <p>Please do not hesitate to contact us should you have any questions.</p>
+        </div>
+        <div class="sign">
+          <p><strong>Prepared BY: ERICK M. OCHIENG</strong></p>
+          <div class="signed">
+            <p>Signed</p>
+            <div class="dot">
+              <img src="./assets/Picture.png" alt="Signature" />
+              <p>.....................</p>
+            </div>
+          </div>
+          <p class="pin">KRA PIN: A004195051M</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Download bar -->
+    <div class="download-section">
+      <button id="downloadBtn" onclick="downloadQuotation()">&#8595; Download as PDF</button>
+      <button id="downloadWordBtn" onclick="downloadQuotationAsWord()">&#8595; Download as Word</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

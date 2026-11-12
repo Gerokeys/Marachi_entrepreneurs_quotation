@@ -1,0 +1,403 @@
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── Base ── */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #6b6b6b;
+  color: #222;
+  min-height: 100vh;
+  padding: 24px 12px 0;
+}
+
+/* ── Document card ── */
+.quotation-container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 24px;
+  background-color: #fff;
+  padding: 28px 32px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Header ── */
+.quotation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.company-name {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0.5px;
+  color: #111;
+}
+
+.logo { text-align: right; flex-shrink: 0; }
+
+.logo img {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.logo p {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: #830606;
+  margin-top: 3px;
+}
+
+/* ── Dealer tagline ── */
+.dealers {
+  font-size: 12px;
+  text-align: center;
+  color: #555;
+  line-height: 1.55;
+  padding: 8px 0 10px;
+  border-top: 2px solid #830606;
+  border-bottom: 1px solid #d0d0d0;
+  margin-bottom: 4px;
+}
+
+/* ── Document title bar ── */
+.word {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  padding: 6px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: #fff;
+  background-color: #830606;
+  margin: 10px 0 12px;
+}
+
+/* ── Meta box (3 columns) ── */
+.doc-meta-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  border: 1px solid #d0d0d0;
+  margin-bottom: 12px;
+  font-size: 0.85em;
+}
+
+.doc-meta-col {
+  padding: 12px 16px;
+  border-right: 1px solid #d0d0d0;
+  min-width: 0;
+}
+
+.doc-meta-col:last-child {
+  border-right: none;
+  background: #fafafa;
+}
+
+.meta-col-label {
+  font-weight: 700;
+  font-size: 0.88em;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.doc-meta-company p {
+  font-size: 0.88em;
+  line-height: 1.65;
+  color: #333;
+  margin-top: 2px;
+}
+
+.doc-meta-company a {
+  color: #830606;
+  text-decoration: none;
+}
+
+.doc-meta-col .meta-input { width: 100%; }
+
+/* ── Sections ── */
+.project-details,
+.block {
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #830606;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.meta-label {
+  font-weight: 700;
+  white-space: nowrap;
+  color: #333;
+  font-size: 0.9em;
+}
+
+.meta-input {
+  border: none;
+  border-bottom: 1px dotted #aaa;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.92em;
+  flex: 1;
+  padding: 1px 3px;
+  background: transparent;
+  color: #222;
+  min-width: 0;
+}
+
+.meta-input:focus { border-bottom-color: #830606; }
+.meta-input::placeholder,
+.cell-input::placeholder { color: #bbb; }
+
+/* ── Tables ── */
+.q-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.q-table th {
+  background-color: #830606;
+  color: #fff;
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 7px 9px;
+  text-align: left;
+}
+
+.q-table td {
+  border: 1px solid #e0e0e0;
+  padding: 7px 10px;
+  font-size: 0.86em;
+  text-align: left;
+  line-height: 1.45;
+}
+
+.q-table tbody tr:nth-child(even) td { background-color: #fafafa; }
+
+.q-table tfoot td {
+  font-weight: 700;
+  background: #f1f1f1;
+  border-top: 2px solid #830606;
+}
+
+.q-table .num,
+.totals-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Inputs that sit inside table cells */
+.cell-input {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  padding: 5px 7px;
+  font-family: inherit;
+  font-size: 1em;
+  color: #222;
+  background: #fffdf5;
+}
+
+.cell-input:focus {
+  outline: none;
+  border-color: #830606;
+}
+
+#unitRate { font-weight: 700; }
+
+.vat-input {
+  width: 58px;
+  padding: 2px 4px;
+  text-align: right;
+}
+
+/* During export, inputs are replaced by plain-text spans */
+.as-text {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  width: auto !important;
+  display: inline;
+}
+
+.meta-input.as-text {
+  display: inline-block;
+  flex: 1;
+  border-bottom: 1px dotted #aaa !important;
+  padding: 1px 3px !important;
+  min-height: 1.4em;
+}
+
+.doc-meta-col .meta-input.as-text { width: 100% !important; }
+#unitRate.as-text { font-weight: 700; }
+
+/* ── Totals ── */
+.totals-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.totals-table {
+  border-collapse: collapse;
+  min-width: 300px;
+  font-size: 0.86em;
+}
+
+.totals-table td {
+  padding: 6px 14px;
+  border: 1px solid #e0e0e0;
+}
+
+.totals-table tr.grand td {
+  background-color: #830606;
+  color: #fff;
+  font-weight: 700;
+}
+
+.timeline-note { margin-top: 10px; }
+
+/* ── Notes ── */
+.notes {
+  padding-left: 20px;
+  font-size: 0.86em;
+  line-height: 1.6;
+  color: #333;
+}
+
+.notes li { margin-bottom: 3px; }
+
+/* ── Footer ── */
+footer.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+footer h3 {
+  font-size: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+footer p {
+  font-size: 0.82em;
+  line-height: 1.6;
+  color: #444;
+}
+
+.signed {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 7px 0;
+}
+
+.dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dot img {
+  width: 50px;
+  margin-bottom: -14px;
+}
+
+.pin {
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+/* ── Download bar ── */
+.download-section {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 16px;
+  margin: 0 -12px;
+  background: #5a5a5a;
+  flex-wrap: wrap;
+}
+
+.download-section button {
+  padding: 11px 26px;
+  font-size: 0.88em;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: #fff;
+  transition: background 0.18s;
+}
+
+#downloadBtn { background: #830606; }
+#downloadBtn:hover { background: #5a0707; }
+#downloadWordBtn { background: #1a4b8a; }
+#downloadWordBtn:hover { background: #133768; }
+
+/* ── Mobile (≤ 640px) — skipped while exporting so the PDF keeps the desktop layout ── */
+@media (max-width: 640px) {
+  body { padding: 0; }
+
+  .quotation-container:not(.exporting) {
+    margin: 0;
+    padding: 14px;
+    box-shadow: none;
+  }
+
+  .quotation-container:not(.exporting) .company-name { font-size: 28px; }
+  .quotation-container:not(.exporting) .logo img { width: 54px; height: 54px; }
+
+  .quotation-container:not(.exporting) .doc-meta-box { grid-template-columns: 1fr; }
+  .quotation-container:not(.exporting) .doc-meta-col {
+    border-right: none;
+    border-bottom: 1px solid #d0d0d0;
+  }
+  .quotation-container:not(.exporting) .doc-meta-col:last-child { border-bottom: none; }
+
+  .quotation-container:not(.exporting) .block { overflow-x: auto; }
+  .quotation-container:not(.exporting) #costTable,
+  .quotation-container:not(.exporting) #timelineTable { min-width: 560px; }
+
+  .quotation-container:not(.exporting) .meta-row { flex-direction: column; gap: 0; }
+  .quotation-container:not(.exporting) .meta-row .meta-input { width: 100%; }
+
+  .quotation-container:not(.exporting) footer.footer { flex-direction: column; gap: 16px; }
+  .quotation-container:not(.exporting) .totals-table { width: 100%; min-width: 0; }
+
+  .download-section { flex-direction: column; margin: 0; padding: 12px; }
+  .download-section button { width: 100%; }
+}
